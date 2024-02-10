@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRSDKSharp", "..\iRacingSdk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRacingSimulator", "..\iRacingSdkWrapper-master\iRacingSimulator\iRacingSimulator.csproj", "{1765E7DB-BEE4-4324-A396-923D80B61EA0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{222C9815-13E2-4B5F-B995-4CBDD189DB88}"
+	ProjectSection(SolutionItems) = preProject
+		Telemetria.cs = Telemetria.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
