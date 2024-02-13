@@ -7,33 +7,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.7/signalr.min.js"></script>
+    <title>SignalR Example</title>
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.2.min.js"></script>
+    <script src="/signalr/hubs"></script> <!-- Incluye el archivo generado automáticamente por SignalR -->
 </head>
 <body>
-    <h1>Telemetry Dashboard</h1>
-    <div id="telemetryData"></div>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" />
+    <button id="sendButton">Send</button>
 
     <script>
-        var connection = new signalR.HubConnectionBuilder()
-            .withUrl("/telemetryHub")
-            .build();
+        $(function () {
+            var connection = $.hubConnection(); // Crea una nueva conexión SignalR
+            var hubProxy = connection.createHubProxy('myHub'); // Crea un proxy para tu hub
 
-        connection.on("ReceiveTelemetryData", function(telemetryData) {
-            // Actualiza la interfaz de usuario con los nuevos datos de telemetría recibidos
-            document.getElementById("telemetryData").innerHTML = JSON.stringify(telemetryData);
-        });
-
-        connection.start()
-            .then(function () {
-                console.log("Conexión establecida con el servidor de SignalR");
-            })
-            .catch(function (err) {
-                console.error(err.toString());
+            hubProxy.on('receiveMessage', function (message) { // Define el método para recibir mensajes del servidor
+                $('#messages').append('<p>' + message + '</p>');
             });
+
+            connection.start().done(function () { // Inicia la conexión
+                console.log('SignalR connection established.');
+            });
+
+            $('#sendButton').click(function () {
+                var message = $('#messageInput').val();
+                hubProxy.invoke('sendMessage', message); // Invoca el método del servidor
+            });
+        });
     </script>
 </body>
 </html>
-
