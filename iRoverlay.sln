@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iRoverlay", "iRoverlay\iRoverlay.csproj", "{7D1EECC7-0A68-4AED-B3F0-B1330BBDE611}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1765E7DB-BEE4-4324-A396-923D80B61EA0} = {1765E7DB-BEE4-4324-A396-923D80B61EA0}
+		{72631B85-EB9A-473E-9B4C-65B355A9000D} = {72631B85-EB9A-473E-9B4C-65B355A9000D}
+		{D6DB568B-35B3-49EB-8CB3-E4E5F1424247} = {D6DB568B-35B3-49EB-8CB3-E4E5F1424247}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRacingSdkWrapper", "..\iRacingSdkWrapper-master\iRacingSdkWrapper\iRacingSdkWrapper.csproj", "{D6DB568B-35B3-49EB-8CB3-E4E5F1424247}"
 EndProject

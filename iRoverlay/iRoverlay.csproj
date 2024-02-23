@@ -10,8 +10,13 @@
     <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.3" />
     <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\iRacingSdkWrapper-master\iRacingSdkWrapper\iRacingSdkWrapper.csproj" />
+    <ProjectReference Include="..\..\iRacingSdkWrapper-master\iRacingSimulator\iRacingSimulator.csproj" />
+    <ProjectReference Include="..\..\iRacingSdkWrapper-master\irsdkSharp\iRSDKSharp.csproj" />
   </ItemGroup>
 
 </Project>
